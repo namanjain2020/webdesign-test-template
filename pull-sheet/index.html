@@ -147,17 +147,17 @@
 
         displaying($items);
 
-        // $yaml_dump = jsyaml.dump($items);
-        // document.getElementById("source").value = $yaml_dump;
+        $yaml_dump = jsyaml.dump($items);
+        document.getElementById("source").value = $yaml_dump;
 
-        // var github = new Github({ token: $GHToken, auth: "oauth" });
-        // var repo = github.getRepo($org, $repo);
-        // console.log("respo ", repo);
-        // $writepath = "_data/" + $resource + ".yaml";
+        var github = new Github({ token: $GHToken, auth: "oauth" });
+        var repo = github.getRepo($org, $repo);
+        console.log("respo ", repo);
+        $writepath = "_data/" + $resource + ".yaml";
 
-        // repo.write($branch, $writepath, $yaml_dump, "Update " + $resource, function (err) {
-        //   console.log(err);
-        // });
+        repo.write($branch, $writepath, $yaml_dump, "Update " + $resource, function (err) {
+          console.log(err);
+        });
       }
     </script>
     <textare
